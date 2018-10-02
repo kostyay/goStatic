@@ -1,6 +1,6 @@
 # stage 0
 FROM golang:latest as builder
-WORKDIR /go/src/github.com/PierreZ/goStatic
+WORKDIR /go/src/github.com/kostyay/goStatic
 COPY . .
 
 RUN GOARCH=amd64 GOOS=linux go build -tags netgo -installsuffix netgo -ldflags "-linkmode external -extldflags -static -w"
